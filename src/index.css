@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  /* Let's define the custom colors from our Stitch design system */
+  --color-background: #0e1511;
+  --color-surface: #0e1511;
+  --color-primary: #4edea3;
+  --color-surface-container: #1a211d;
+  --color-surface-container-low: #161d19;
+  --color-surface-container-highest: #2f3632;
+  --color-outline-variant: #3c4a42;
+  --color-on-surface: #dde4dd;
+  --color-on-surface-variant: #bbcabf;
+  /* Typographies & Fonts */
+  --font-display: "Geist", sans-serif;
+  --font-body: "Geist", sans-serif;
+  --font-code: "JetBrains Mono", monospace;
+}
+
+textarea::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: var(--color-surface-container-low);
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+  border-radius: 4px;
+}
+textarea::-webkit-scrollbar-thumb:hover {
+  background: var(--color-outline);
+}
+/* Toast animation styling */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+}
+.toast-show {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
